@@ -1,4 +1,4 @@
-# Fluffy Happiness
+# Flurry Happiness
 
 Demo project for snyk usage
 
