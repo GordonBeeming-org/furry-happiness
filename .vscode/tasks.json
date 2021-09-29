@@ -6,7 +6,9 @@
       "command": "dotnet",
       "type": "shell",
       "args": [
-        "build"
+        "build",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile",
       "options": {
@@ -26,6 +28,7 @@
         "build",
         "--configuration",
         "release",
+        "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile",
@@ -37,6 +40,22 @@
         "reveal": "always",
         "panel": "shared"
       }
+    },
+    {
+      "label": "watch app",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "${workspaceFolder}/src/FurryHappiness/FurryHappiness.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/FurryHappiness/"
+      },
     },
     {
       "label": "build database",
@@ -82,7 +101,6 @@
         "panel": "shared"
       }
     }
-
     // ,{
     //   "label": "create table",
     //   "command": "dotnet",
