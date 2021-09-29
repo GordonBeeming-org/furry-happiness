@@ -3,15 +3,15 @@
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
-  "configurations": [
+  "configurations": [    
     {
       "name": ".NET Core Launch (web)",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build app",
-      "program": "${workspaceFolder}/bin/Debug/net5/FurryHappiness.dll>",
-      "args": [],
-      "cwd": "${workspaceFolder}",
+      "program": "dotnet",
+      "args": ["${workspaceFolder}/src/FurryHappiness/bin/Debug/net5.0/FurryHappiness.dll"],
+      "cwd": "${workspaceFolder}/src/FurryHappiness",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",

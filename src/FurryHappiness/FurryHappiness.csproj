@@ -5,6 +5,7 @@
     <UserSecretsId>aspnet-FurryHappiness-6DAFD4A5-E256-4B3B-9314-9557ABC87B55</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <Nullable>enable</Nullable>
+    <IntermediateOutputPath>obj</IntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

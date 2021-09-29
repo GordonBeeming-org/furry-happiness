@@ -6,10 +6,7 @@
       "command": "dotnet",
       "type": "shell",
       "args": [
-        "build",
-        "--configuration",
-        "debug",
-        "/consoleloggerparameters:NoSummary"
+        "build"
       ],
       "problemMatcher": "$msCompile",
       "options": {
@@ -18,7 +15,7 @@
       "group": "build",
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "shared"
       }
     },
     {
@@ -38,7 +35,7 @@
       "group": "build",
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "shared"
       }
     },
     {
@@ -58,7 +55,7 @@
       "group": "build",
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "shared"
       }
     },
     {
@@ -82,7 +79,7 @@
       "group": "build",
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "shared"
       }
     }
 
