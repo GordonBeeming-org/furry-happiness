@@ -1,0 +1,122 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build app",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "build",
+        "--configuration",
+        "debug",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/FurryHappiness"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "build app (release)",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "build",
+        "--configuration",
+        "release",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/FurryHappiness"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "build database",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "build",
+        "--configuration",
+        "release",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/FurryHappiness.Database"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "publish database",
+      "command": "~/sqlpackage/sqlpackage",
+      "type": "shell",
+      "args": [
+        "/Action:Publish",
+        "/SourceFile:FurryHappiness.Database.dacpac",
+        "/TargetServerName:db_instance,1433",
+        "/TargetDatabaseName:FurryHappiness",
+        "/TargetUser:sa",
+        "/TargetPassword:P@ssw0rd12345",
+        "/Properties:IncludeCompositeObjects=True",
+        "/Diagnostics:True"
+      ],
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/FurryHappiness.Database/bin/release/netstandard2.0"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+
+    // ,{
+    //   "label": "create table",
+    //   "command": "dotnet",
+    //   "type": "shell",
+    //   "args": [
+    //     "new",
+    //     "table",
+    //     "-n","${input:tableName}",
+    //     "-s","${input:schema}"
+    //   ],
+    //   "problemMatcher": "$msCompile",
+    //   "options": {
+    //     "cwd": "${workspaceFolder}/src/FurryHappiness.Database/bin/Release/netstandard2.0"
+    //   },
+    //   "group": "none",
+    //   "presentation": {
+    //     "reveal": "silent"
+    //   }
+    // }    
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "schema",
+      "description": "Schmea Name.",
+      "default": "dbo"
+    },
+    {
+      "type": "promptString",
+      "id": "tableName",
+      "description": "Table Name."
+    }
+  ]
+}

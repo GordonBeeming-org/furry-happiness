@@ -235,6 +235,5 @@ _Pvt_Extensions
 *.min.js
 
 package-lock.json
-**/.vscode/**
 package/
 *.vsix
