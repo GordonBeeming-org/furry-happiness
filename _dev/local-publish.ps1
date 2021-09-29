@@ -1,0 +1,2 @@
+cd /app/src/FurryHappiness.Database/bin/release/netstandard2.0
+~/sqlpackage/sqlpackage /Action:Publish /SourceFile:FurryHappiness.Database.dacpac /TargetServerName:db_instance,1433 /TargetDatabaseName:FurryHappiness /TargetUser:sa /TargetPassword:P@ssw0rd12345 /Properties:IncludeCompositeObjects=True
