@@ -1,0 +1,35 @@
+name: Snyk dotNET
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - '.github/workflows/snyk-dotNET-analysis.yml'
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - '.github/workflows/snyk-dotNET-analysis.yml'
+  schedule:
+    - cron: '20 14 * * 1'
+
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/dotnet@master
+      working-directory: src
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: snyk.sarif
