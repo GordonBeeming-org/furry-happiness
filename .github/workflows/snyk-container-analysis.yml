@@ -53,7 +53,7 @@ jobs:
         args: --file=.github/workflows/db/Dockerfile
         
     - name: Build a Docker image
-      run: docker build -t local/dev-image -f _dev\Dockerfile .
+      run: docker build -t local/dev-image -f _dev/Dockerfile .
       
     - name: Run Snyk to check Docker image for vulnerabilities
       # Snyk can be used to break the build when it detects vulnerabilities.
@@ -67,7 +67,7 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: local/dev-image
-        args: --file=_dev\Dockerfile
+        args: --file=_dev/Dockerfile
         
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v1
