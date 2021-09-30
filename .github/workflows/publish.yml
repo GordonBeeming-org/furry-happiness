@@ -39,6 +39,6 @@ jobs:
 
     - name: Build the FurryHappiness-db Docker image
       run: |
-        docker build --tag ghcr.io/dah-dah-demos/furryhappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev --tag ghcr.io/dah-dah-demos/furryhappiness-db:dev -f build/db/Dockerfile .
+        docker build --tag ghcr.io/dah-dah-demos/furryhappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev --tag ghcr.io/dah-dah-demos/furryhappiness-db:dev -f .github/workflows/db/Dockerfile .
         docker push ghcr.io/dah-dah-demos/furryhappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev
         docker push ghcr.io/dah-dah-demos/furryhappiness-db:dev
