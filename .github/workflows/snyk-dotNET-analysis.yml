@@ -25,7 +25,6 @@ jobs:
     
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/dotnet@master
-      working-directory: src
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         
