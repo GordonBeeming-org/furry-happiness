@@ -8,8 +8,16 @@ name: DevSkim
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**.yml'
+      - '!.github/workflows/devskim-analysis.yml'
+      - '**.tf'
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - '**.yml'
+      - '!.github/workflows/devskim-analysis.yml'
+      - '**.tf'
   schedule:
     - cron: '42 2 * * 6'
 

@@ -10,9 +10,15 @@ name: Snyk Infrastructure as Code
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**.tf'
+      - '.github/workflows/snyk-infrastructure-analysis.yml'
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
+    paths:
+      - '**.tf'
+      - '.github/workflows/snyk-infrastructure-analysis.yml'
   schedule:
     - cron: '39 16 * * 0'
 
