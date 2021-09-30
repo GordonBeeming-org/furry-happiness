@@ -3,7 +3,7 @@ name: publish
 on: [push]
 
 jobs:
-  publish-FurryHappiness-db-image:
+  publish-furryhappiness-images:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -39,6 +39,6 @@ jobs:
 
     - name: Build the FurryHappiness-db Docker image
       run: |
-        docker build --tag ghcr.io/dah-dah-demos/FurryHappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev --tag ghcr.io/dah-dah-demos/FurryHappiness-db:dev -f build/db/Dockerfile .
-        docker push ghcr.io/dah-dah-demos/FurryHappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev
-        docker push ghcr.io/dah-dah-demos/FurryHappiness-db:dev
+        docker build --tag ghcr.io/dah-dah-demos/furryhappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev --tag ghcr.io/dah-dah-demos/furryhappiness-db:dev -f build/db/Dockerfile .
+        docker push ghcr.io/dah-dah-demos/furryhappiness-db:${{ steps.update-version.outputs.BUILD_NUMBER }}-dev
+        docker push ghcr.io/dah-dah-demos/furryhappiness-db:dev
