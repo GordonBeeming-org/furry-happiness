@@ -19,7 +19,7 @@
   "settings": {
     "terminal.integrated.shell.linux": "/opt/microsoft/powershell/7/pwsh",
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-    "workbench.colorTheme": "Visual Studio 2019 Light",
+    "workbench.colorTheme": "Tomorrow Night Blue",
     "editor.formatOnSave": true,
     "mssql.maxRecentConnections": 5,
     "mssql.connections": [
