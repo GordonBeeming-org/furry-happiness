@@ -35,8 +35,8 @@ do
     if ($attempts -gt 0) { Start-Sleep $sleepInSeconds }
 } while ($attempts -gt 0)
 
-. /app/_dev/build.ps1
-. /app/_dev/local-publish.ps1
-Invoke-Sqlcmd -ServerInstance "db_instance,1433" -Username SA -Password "P@ssw0rd12345" -InputFile "/app/_dev/init.sql";
+. /app/.devcontainer/dev/build.ps1
+. /app/.devcontainer/dev/local-publish.ps1
+# Invoke-Sqlcmd -ServerInstance "db_instance,1433" -Username SA -Password "P@ssw0rd12345" -InputFile "/app/.devcontainer/dev/init.sql";
 
 # dotnet new --install MSBuild.Sdk.SqlProj.Templates
