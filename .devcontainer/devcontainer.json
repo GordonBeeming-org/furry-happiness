@@ -1,7 +1,7 @@
 {
   "name": "Furry Happiness",
   "dockerComposeFile": [
-    "../_dev/docker-compose.yml"
+    "dev/docker-compose.yml"
   ],
   "service": "dev",
   "workspaceFolder": "/app",
